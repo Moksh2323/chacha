@@ -37,8 +37,9 @@ async def joinall(xspam: Client, e: Message):
         return await e.reply_text("Can't join a chat with chat id. Give username or invite link.")
     try:
       for group in chat:
-      await xspam.join_chat(group)
-      await e.reply_text("**Join Successfully ✅ **")
+        await xspam.join_chat(group)
+        await e.reply_text("**Join Successfully ✅ **")
+        await asyncio.sleep(0.10)
     except Exception as ex:
         await e.reply_text(f"**ERROR:** \n\n{str(ex)}")
     if LOGS_CHANNEL:
