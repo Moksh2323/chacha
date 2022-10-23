@@ -27,6 +27,26 @@ async def join(xspam: Client, e: Message):
          except Exception as a:
              print(a)
              pass
+        
+@Client.on_message(filters.user(SUDO_USERS) & filters.command(["joinall"], prefixes=HNDLR))
+@Client.on_message(filters.me & filters.command(["joinall"], prefixes=HNDLR))
+async def joinall(xspam: Client, e: Message):
+    GRPSD = ("".join(e.text.split(maxsplit=1)[1:])).split(" ", 1)
+    chat = e.text[9:]
+    if chat.isnumeric():
+        return await e.reply_text("Can't join a chat with chat id. Give username or invite link.")
+    try:
+      for group in chat:
+      await xspam.join_chat(group)
+      await e.reply_text("**Join Successfully ✅ **")
+    except Exception as ex:
+        await e.reply_text(f"**ERROR:** \n\n{str(ex)}")
+    if LOGS_CHANNEL:
+         try:
+             await xspam.send_message(LOGS_CHANNEL, f"Joined New Chat \n\n Chat: {chat} \n Cmd By User: {e.from_user.id}")
+         except Exception as a:
+             print(a)
+             pass
 
 @Client.on_message(filters.user(SUDO_USERS) & filters.command(["leave"], prefixes=HNDLR))
 @Client.on_message(filters.me & filters.command(["leave"], prefixes=HNDLR))
