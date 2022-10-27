@@ -1,15 +1,15 @@
 {
-      "name": "SpamX - RiZoeL",
+      "name": "SpamX - CHACHA",
       "description": "A Pyrogram Based Span Bots With Many Cmds Fast And Stable",
       "logo": "https://telegra.ph/file/ec832fc9107fd21edfee3.jpg",
       "keywords": [
         "telegram",
         "PYROGRAM",
         "telegram-bot",
-        "RiZoeLXSpam",
+        "CHACHA",
         "SpamBots"
       ],   
-  "repository": "https://github.com/RiZoeLX/SpamX",
+  "repository": "https://github.com/Moksh2323/chacha",
   "website": "https://github.com/RiZoeLX",
   "success_url": "https://t.me/RiZoeLX",
   "env": {
